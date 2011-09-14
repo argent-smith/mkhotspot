@@ -14,9 +14,6 @@ namespace :features do
   end
 end
 
-
-
-
 require 'rspec/core/rake_task'
 desc "Run specs"
 RSpec::Core::RakeTask.new(:spec) do |t|
@@ -40,3 +37,4 @@ namespace :autotest do
   end
 end
 
+task :default => ["spec:doc", "features:pretty"]
