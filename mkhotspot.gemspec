@@ -7,9 +7,9 @@ Gem::Specification.new do |s|
   s.version     = Mkhotspot::VERSION
   s.authors     = ["Pavel Argentov"]
   s.email       = ["argentoff@gmail.com"]
-  s.homepage    = ""
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
+  s.homepage    = "https://github.com/argent-smith/mkhotspot"
+  s.summary     = %q{ISP's simple hotspot generator}
+  s.description = %q{Generates BRAS and portal configs for a hotspot with given name.}
 
   s.rubyforge_project = "mkhotspot"
 
