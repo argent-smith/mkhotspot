@@ -12,13 +12,15 @@ Feature: Overview
     """
 
 
-  Scenario: I look up the version
+  Scenario Outline: I look up the version
     Given I found "mkhotspot" binary
-    When I run `mkhotspot` with the following options:
+    When I run `mkhotspot <option>`
+    Then the output should match /^\d+.\d+.\d+$/
+
+    Examples:
+      | option    |
       | -v        |
       | -V        |
       | --version |
       | version   |
-
-    Then the output should match /^\d+.\d+.\d+$/
 
