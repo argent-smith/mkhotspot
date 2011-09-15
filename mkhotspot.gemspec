@@ -28,4 +28,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency "redgreen"
   s.add_development_dependency "ruby-graphviz"
 
+  s.add_dependency     "thor"
+
 end

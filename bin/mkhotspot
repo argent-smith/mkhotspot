@@ -5,18 +5,4 @@ require "mkhotspot"
 require "fileutils"
 include FileUtils
 
-puts "configuration loaded for #{ARGV[0]}"
-
-begin
-  puts "Generating the hotspot data"
-  mkdir_p "generated/#{ARGV[0]}"
-
-  puts "BRAS config generated"
-  mkdir_p "generated/#{ARGV[0]}/BRAS"
-
-  puts "Auth portal config generated"
-  mkdir_p "generated/#{ARGV[0]}/portal"
-rescue => Errno::EEXIST
-  rm_rf $!.message.match(/^File exists - (.*)$/)[1]
-  retry
-end
+Mkhotspot::App.start

@@ -1,19 +1,24 @@
 Feature: Overview
-  As a sysadmin
   In order to create a full set of hotspot configs
-  I want to run "mkhotspot" and get the results both onthe console and on the disk
+  As a sysadmin
+  I want to run "mkhotspot" and get the results both on the console and on the disk
 
-  Scenario: I run "mkhotspot"
+  Scenario: I start the program without CLI options
     Given I found "mkhotspot" binary
-    When I run `mkhotspot newhotspot`
-    Then the output should contain:
+    When I run `mkhotspot`
+    Then it should pass with:
     """
-    configuration loaded for newhotspot
-    Generating the hotspot data
-    BRAS config generated
-    Auth portal config generated
+    Tasks:
     """
-    And the following directories should exist:
-      | generated/newhotspot/BRAS   |
-      | generated/newhotspot/portal |
+
+
+  Scenario: I look up the version
+    Given I found "mkhotspot" binary
+    When I run `mkhotspot` with the following options:
+      | -v        |
+      | -V        |
+      | --version |
+      | version   |
+
+    Then the output should match /^\d+.\d+.\d+$/
 

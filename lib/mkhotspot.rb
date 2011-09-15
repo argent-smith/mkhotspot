@@ -1,5 +1,6 @@
 require "mkhotspot/version"
 
 module Mkhotspot
-  # Your code goes here...
+  autoload :App,   "mkhotspot/app"
+  autoload :Tasks, "mkhotspot/tasks"
 end
