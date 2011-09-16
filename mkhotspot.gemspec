@@ -19,15 +19,15 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
 
   # specify any dependencies here; for example:
-  s.add_development_dependency "rake"
-  s.add_development_dependency "rspec"
-  s.add_development_dependency "aruba"
-  s.add_development_dependency "cucumber"
-  s.add_development_dependency "ZenTest"
-  s.add_development_dependency "test-unit"
-  s.add_development_dependency "redgreen"
-  s.add_development_dependency "ruby-graphviz"
+  s.add_development_dependency  "rake"
+  s.add_development_dependency  "rspec"
+  s.add_development_dependency  "aruba"
+  s.add_development_dependency  "cucumber"
+  s.add_development_dependency  "ZenTest"
+  s.add_development_dependency  "test-unit"
+  s.add_development_dependency  "redgreen"
+  s.add_development_dependency  "ruby-graphviz"
 
-  s.add_dependency     "thor"
+  s.add_dependency              "thor"
 
 end
