@@ -12,7 +12,7 @@ Feature: Overview
     "generate" was called incorrectly
     """
 
-
+  @wip
   Scenario Outline: I look up the version
     Given I found "mkhotspot" binary
     When I run `mkhotspot <option>`
