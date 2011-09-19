@@ -1,6 +1,5 @@
 require 'thor'
 require 'mkhotspot/version'
-require 'mkhotspot/config'
 
 module Mkhotspot
   class App < Thor

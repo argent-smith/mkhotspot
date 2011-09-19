@@ -77,8 +77,8 @@ describe Mkhotspot do
         }
 
         @config_text_full = %Q{
-            # Toplevel hotspot configuration
-            hotspot "HS_01" do
+          # Toplevel hotspot configuration
+          hotspot "HS_01" do
 
             # BRAS configuration
             configure_bras "Cisco1" do
