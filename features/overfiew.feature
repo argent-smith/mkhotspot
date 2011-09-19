@@ -3,6 +3,7 @@ Feature: Overview
   As a sysadmin
   I want to run "mkhotspot" and get the results both on the console and on the disk
 
+  @ready
   Scenario: I start the program without CLI options 
             and see the error output from the default "generate" task
     Given I found "mkhotspot" binary
@@ -12,7 +13,7 @@ Feature: Overview
     "generate" was called incorrectly
     """
 
-  @wip
+  @ready
   Scenario Outline: I look up the version
     Given I found "mkhotspot" binary
     When I run `mkhotspot <option>`
