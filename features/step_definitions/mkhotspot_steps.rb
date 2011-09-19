@@ -8,3 +8,9 @@ When /^I run `([^`]*)` with the following options:$/ do |cmd, table|
   end
 end
 
+# Parsed configuration tests
+Then /^the configured values should be in place for "([^"]*)"$/ do |hs_name|
+  pending "WIP"
+
+end
+
