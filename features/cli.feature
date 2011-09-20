@@ -8,7 +8,7 @@ Feature: CLI usage
   Background:
     Given I found "mkhotspot" binary
 
-  @wip
+  @ready
   Scenario: I start the program without CLI options 
     When I run `mkhotspot`
     Then it should pass with:
@@ -16,7 +16,7 @@ Feature: CLI usage
     "generate" was called incorrectly
     """
 
-  @wip
+  @ready
   Scenario Outline: I look up the version
     When I run `mkhotspot <option>`
     Then the output should match /^\d+.\d+.\d+$/
