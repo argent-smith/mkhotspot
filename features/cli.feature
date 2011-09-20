@@ -27,4 +27,3 @@ Feature: CLI usage
       | -V        |
       | --version |
       | version   |
-
