@@ -28,12 +28,17 @@ module Mkhotspot
     end
 
     # Supplementary methods
-    def configure(cfg_file)
-      if File.exists?(cfg_file)
-        @cfg = Mkhotspot::Config.new :file => cfg_file
-      else
-        say "Configuration file '#{cfg_file}' was not found!", :red
+    no_tasks do
+
+      # Invokes the configuration parser
+      def configure(cfg_file)
+        if File.exists?(cfg_file)
+          @cfg ||= Mkhotspot::Config.new :file => cfg_file
+        else
+          say "Configuration file '#{cfg_file}' was not found!", :red
+        end
       end
+
     end
 
   end
