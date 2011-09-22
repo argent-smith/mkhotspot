@@ -1,7 +1,9 @@
 require 'thor'
+require 'thor/group'
 require 'mkhotspot/version'
 
 module Mkhotspot
+
   class App < Thor
     include Thor::Actions
 
