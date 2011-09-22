@@ -8,18 +8,15 @@ Feature: CLI usage
   Background:
     Given I found "mkhotspot" binary
 
-  @ready
+  @wip
   Scenario: I start the program without CLI options 
     When I run `mkhotspot`
-    Then it should pass with:
-    """
-    "generate" was called incorrectly
-    """
+    Then the exit status should be 0
 
-  @ready
+  @wip
   Scenario Outline: I look up the version
     When I run `mkhotspot <option>`
-    Then the output should match /^\d+.\d+.\d+$/
+    Then the output should match /version \d+.\d+.\d+$/
 
     Examples:
       | option    |
