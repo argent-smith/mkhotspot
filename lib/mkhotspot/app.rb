@@ -1,46 +1,23 @@
-require 'thor'
-require 'thor/group'
-require 'mkhotspot/version'
-
 module Mkhotspot
   class App < Thor
-    include Thor::Actions
-
     map %w(-v -V --version) => :version
 
-    desc "version", "Get the current version number"
+    desc "version", "Display the current version number"
     def version
       say "Simple ISP hotspot generator version #{Mkhotspot::VERSION}"
     end
 
-    class Generator < Thor::Group
-      include Thor::Actions
-
-      class_option :f,
-          :type => :string,
-          :default => "hotspot.cfg"
-
-      desc %(see "help generate")
-
-      def self.source_root
-        File.expand_path('../../templates', File.dirname(__FILE__))
-      end
-
-      def configure
-        say "foo", :green
-      end
-
-      def generate
-        say "bar", :green
-      end
-    end
-
-    register Generator,
+    register Mkhotspot::Tasks::Generator,
       :generate,
-      "generate",
-      "Generates the set of files defining an ISG hotspot"
+      "generate [OPTIONS]",
+      "Generates an ISG hotspot boilerplate"
 
     default_task :generate
+
+    def help(task = nil, subcommand = false)
+      super
+      Mkhotspot::Tasks::Generator.class_options_help shell if task == "generate"
+    end
 
   end
 end
