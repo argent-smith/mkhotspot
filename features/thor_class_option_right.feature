@@ -38,12 +38,12 @@ Feature: Thor::Group#class_option understands one-letter alias
       """
       And I run `chmod +x example.rb`
 
-  @wip
+  @ready
   Scenario: Simple stupid example just runs
     When I run `./example.rb`
     Then the exit status should be 0
 
-  @wip
+  @ready
   Scenario Outline: Simple stupid example shows help
     When I run `./example.rb <option>`
     Then the output should contain:
@@ -57,7 +57,7 @@ Feature: Thor::Group#class_option understands one-letter alias
       | --help |
       | help   |
 
-  @wip
+  @ready
   Scenario Outline: it runs zoo task with different options
     When I run `./example.rb zoo <option> <value>`
     Then the output should contain:
