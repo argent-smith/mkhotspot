@@ -8,12 +8,12 @@ Feature: CLI usage
   Background:
     Given I found "mkhotspot" binary
 
-  @ready
+  @wip
   Scenario: I start the program without CLI options 
     When I run `mkhotspot`
     Then the exit status should be 0
 
-  @ready
+  @wip
   Scenario Outline: I look up the version
     When I run `mkhotspot <option>`
     Then the output should match /version \d+.\d+.\d+$/
@@ -25,7 +25,23 @@ Feature: CLI usage
       | --version |
       | version   |
 
-  @ready
+  @wip
+  Scenario Outline: I watch general help
+    When I run `mkhotspot <option>`
+    Then the output should match:
+    """
+    ^Usage:.*
+    .*
+    ^Tasks:.*
+    """
+
+    Examples:
+      | option |
+      | -h     |
+      | --help |
+      | help   |
+
+  @wip
   Scenario Outline: It doesn't like the absense of configuration
     When I run `mkhotspot <task> <option> <parameter>`
     Then the output should contain:
