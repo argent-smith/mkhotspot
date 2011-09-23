@@ -1,7 +1,3 @@
-require 'thor'
-require 'thor/group'
-require 'mkhotspot/version'
-
 module Mkhotspot
 
   class App < Thor
@@ -20,8 +16,15 @@ module Mkhotspot
     default_task :generate
 
     def help(task = nil, subcommand = false)
+      special_help = Help.new
+      case task
+      when nil
+        special_help.show_app_description
+        special_help.show_app_usage
+      when "generate"
+        Mkhotspot::Tasks::Generator.class_options_help shell
+      end
       super
-      Mkhotspot::Tasks::Generator.class_options_help shell if task == "generate"
     end
 
   end
