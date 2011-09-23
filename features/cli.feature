@@ -24,3 +24,20 @@ Feature: CLI usage
       | -V        |
       | --version |
       | version   |
+
+  @wip
+  Scenario Outline: It doesn't like the absense of configuration
+    When I run `mkhotspot <task> <option> <parameter>`
+    Then the output should contain:
+    """
+    FATAL: No such file or directory - <whats_bad>
+    """
+
+    Examples:
+      | task     | option     | parameter | whats_bad   |
+      |          |            |           | hotspot.cfg |
+      |          | --cfg_file | 123.cfg   | 123.cfg     |
+      |          | -f         | 123.cfg   | 123.cfg     |
+      | generate |            |           | hotspot.cfg |
+      | generate | --cfg_file | 123.cfg   | 123.cfg     |
+      | generate | -f         | 123.cfg   | 123.cfg     |

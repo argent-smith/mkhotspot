@@ -4,11 +4,11 @@ module Mkhotspot
       include Thor::Actions
 
       class_option :cfg_file,
-        :type => :string,
+        :type    => :string,
         :default => "hotspot.cfg",
-        :desc => "input configuration filename",
-        :aliases => "-cf",
-        :banner => "FILE"
+        :desc    => "input configuration filename",
+        :aliases => "-f",
+        :banner  => "FILE"
 
       attr_reader :cfg
 
