@@ -8,12 +8,12 @@ Feature: CLI usage
   Background:
     Given I found "mkhotspot" binary
 
-  @wip
+  @ready
   Scenario: I start the program without CLI options 
     When I run `mkhotspot`
     Then the exit status should be 0
 
-  @wip
+  @ready
   Scenario Outline: I look up the version
     When I run `mkhotspot <option>`
     Then the output should match /version \d+.\d+.\d+$/
