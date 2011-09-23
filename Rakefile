@@ -37,4 +37,4 @@ namespace :autotest do
   end
 end
 
-task :default => [:spec, :features]
+task :default => [:spec, :features, "features:wip"]
