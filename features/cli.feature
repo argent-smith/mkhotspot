@@ -25,7 +25,7 @@ Feature: CLI usage
       | --version |
       | version   |
 
-  @wip
+  @ready
   Scenario Outline: It doesn't like the absense of configuration
     When I run `mkhotspot <task> <option> <parameter>`
     Then the output should contain:
