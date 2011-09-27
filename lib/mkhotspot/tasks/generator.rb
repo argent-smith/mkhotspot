@@ -10,16 +10,16 @@ module Mkhotspot
         :aliases => "-f",
         :banner  => "FILE"
 
-      attr_reader :cfg
+      attr_reader  :hotspot
 
       def self.source_root
-        File.expand_path('../../templates', File.dirname(__FILE__))
+        File.expand_path('../../../templates', File.dirname(__FILE__))
       end
 
       def configure
         options[:cfg_file].tap do |cf|
           begin
-            @cfg = Mkhotspot::Config.new :file => cf
+            @hotspot = Mkhotspot::Config.new :file => cf
           rescue => error
             say "FATAL: ", :bold
             raise Thor::Error, error.message
@@ -28,7 +28,15 @@ module Mkhotspot
       end
 
       def generate
-        puts cfg
+        directory ".", hotspot.name
+      end
+
+      private
+
+      # Template helpers
+
+      def bras
+        hotspot.bras
       end
 
     end

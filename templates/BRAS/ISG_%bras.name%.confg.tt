@@ -1,0 +1,3 @@
+! Cisco ISG configuration created by mkhotspot
+! Hotspot name: <%= hotspot.name %>
+! BRAS name:    <%= bras.name %>
