@@ -33,4 +33,11 @@ Feature: ISG boilerplate generator
   Scenario: mkhotspot generates a destination dir with hotspot's name
     Then a directory named "HS_01" should exist
     And a file named "HS_01/BRAS/ISG_Cisco1.confg" should exist
+    And the file "HS_01/BRAS/ISG_Cisco1.confg" should contain exactly:
+    """
+    ! Cisco ISG configuration created by mkhotspot
+    ! Hotspot name: HS_01
+    ! BRAS name:    Cisco1
+
+    """
 
