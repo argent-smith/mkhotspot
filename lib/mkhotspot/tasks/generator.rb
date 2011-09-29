@@ -31,12 +31,16 @@ module Mkhotspot
         directory ".", hotspot.name
       end
 
-      private
+      no_tasks do
+        # Template helpers
 
-      # Template helpers
+        def bras
+          hotspot.bras
+        end
 
-      def bras
-        hotspot.bras
+        def bras_name
+          bras.name
+        end
       end
 
     end
